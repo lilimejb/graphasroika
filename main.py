@@ -24,6 +24,6 @@ class GraphMaker:
         self.image.save('test.png')
 
 
-maker = GraphMaker([[0, 1, 0, 1], [0, 0, 1, 1], [0, 1, 0, 0], [1, 0, 1, 0]], 860, 860)
+maker = GraphMaker([[0, 1, 0, 1], [0, 0, 1, 1], [0, 1, 0, 0], [1, 0, 1, 0]], 1080, 980)
 maker.make_image()
 print(maker.matrix)

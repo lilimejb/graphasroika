@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QPixmap
 
 
-class MyWidget(QMainWindow):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('grafi.ui', self)
@@ -19,15 +19,18 @@ class MyWidget(QMainWindow):
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
                 matrix[i][j] = int(matrix[i][j])
-        maker = GraphMaker(matrix, 1080, 980)
+        maker = GraphMaker(matrix)
         maker.make_image()
-        pixmap = QPixmap('test.png')
+        pixmap = QPixmap('plot.png')
         self.image.setPixmap(pixmap)
         self.image.setScaledContents(True)
+    
+    def count_roads(self, matrix):
+        pass
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyWidget()
+    ex = MainWindow()
     ex.show()
     sys.exit(app.exec_())
